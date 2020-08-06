@@ -10,7 +10,7 @@ namespace InversionOfControl
 
 		public Invitation()
 		{
-			_emailService = new EmailService();
+			_emailService = ServiceFactory.GetEmailService();
 		}
 
 		public void SendInvitation(string text)
