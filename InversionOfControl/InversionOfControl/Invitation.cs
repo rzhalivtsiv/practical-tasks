@@ -8,6 +8,16 @@ namespace InversionOfControl
 	{
 		private IMessagingService _messageService;
 
+		public IMessagingService DistributionChannel 
+		{  
+			set 
+			{
+				_messageService = value;
+			} 
+		}
+
+		public Invitation() { }
+
 		public Invitation(IMessagingService messageProvider)
 		{
 			_messageService = messageProvider;
@@ -15,7 +25,14 @@ namespace InversionOfControl
 
 		public void SendInvitation(string text)
 		{
-			_messageService.SendMessage(text);
+			if (_messageService == null)
+			{
+				Console.WriteLine("ERROR! Fails to send invite - dependency service is null!");
+			}
+			else
+			{
+				_messageService.SendMessage(text);
+			}
 		}
 	}
 }
