@@ -6,7 +6,7 @@ namespace InversionOfControl
 {
 	class Invitation
 	{
-		private EmailService _emailService;
+		private IMessagingService _emailService;
 
 		public Invitation()
 		{
@@ -15,7 +15,7 @@ namespace InversionOfControl
 
 		public void SendInvitation(string text)
 		{
-			_emailService.SendEmail(text);
+			_emailService.SendMessage(text);
 		}
 	}
 }

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace InversionOfControl
 {
-	class EmailService
+	class EmailService : IMessagingService
 	{
-		public void SendEmail(string text)
+		public void SendMessage(string text)
 		{
 			Console.WriteLine("Message send by email service");
 			Console.WriteLine($"Text: {text}");
