@@ -11,13 +11,13 @@ namespace InversionOfControl
 			IMessagingService telegramAPI = new TelegramMessegerAPI();
 
 			Invitation invite = new Invitation();
-			invite.DistributionChannel = emailProvider;
+			invite.SetDependencyService(emailProvider);
 			invite.SendInvitation("Invitation to a party for Ross");
 
-			invite.DistributionChannel = smsProvider;
+			invite.SetDependencyService(smsProvider);
 			invite.SendInvitation("Invitation to exam test for Andy");
 
-			invite.DistributionChannel = telegramAPI;
+			invite.SetDependencyService(telegramAPI);
 			invite.SendInvitation("Invite to Birthday for Lili");
 		}
 	}

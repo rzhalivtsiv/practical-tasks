@@ -4,7 +4,7 @@ using System.Text;
 
 namespace InversionOfControl
 {
-	class Invitation
+	class Invitation: IServiceDependency
 	{
 		private IMessagingService _messageService;
 
@@ -34,5 +34,7 @@ namespace InversionOfControl
 				_messageService.SendMessage(text);
 			}
 		}
+
+		public void SetDependencyService(IMessagingService service)	=> _messageService = service;
 	}
 }
