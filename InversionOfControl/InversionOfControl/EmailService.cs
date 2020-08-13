@@ -9,7 +9,7 @@ namespace InversionOfControl
 		public void SendMessage(string text)
 		{
 			Console.WriteLine("Message send by email service");
-			Console.WriteLine($"Text: {text}");
+			Console.WriteLine($"Text: {text} \n");
 		}
 	}
 }

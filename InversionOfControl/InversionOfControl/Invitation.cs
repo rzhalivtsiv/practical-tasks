@@ -6,16 +6,16 @@ namespace InversionOfControl
 {
 	class Invitation
 	{
-		private IMessagingService _emailService;
+		private IMessagingService _messageService;
 
-		public Invitation()
+		public Invitation(IMessagingService messageProvider)
 		{
-			_emailService = ServiceFactory.GetEmailService();
+			_messageService = messageProvider;
 		}
 
 		public void SendInvitation(string text)
 		{
-			_emailService.SendMessage(text);
+			_messageService.SendMessage(text);
 		}
 	}
 }
